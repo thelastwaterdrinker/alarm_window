@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency exchange</title>
+  
+</head>
+
+<body>
+    <form>
+        <input type="currency" id="currency-txt" placeholder="Currency" type="text">
+        <button id="currencysubmit">Convert</button>
+    </form>
+    <div id="result">
+
+    </div>
+    <script>
+        async function callAPI() {
+            const request = await fetch('https://api.apilayer.com/exchangerates_data/live?base=USD&symbols=EUR,GBP', {method: 'GET'})
+            request.headers = {'apikey':'nBVEXOoAERyL8G9eISOTtRgWpuj0oy4q'}
+            const json = await request.json()
+            console.log(json);
+        }
+
+        document.getElementById('currencysubmit').onclick = () => {
+            const currency = document.getElementById('currency-txt').value;
+            alert(currency)
+        }
+
+        callAPI();
+        
+    </script>
+</body>
+
+</html>

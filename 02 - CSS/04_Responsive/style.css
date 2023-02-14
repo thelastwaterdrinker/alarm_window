@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+    color: white;
+  }
+  html {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  body {
+    width: 100%;
+    padding: 0% 2% 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  /* below the font size is basically decided relative to the html font-size that is written at the beginning. Here because the root element is 20px the size of the parent element will be 40px. if html did not said anything it would be 16px */
+  .parent1 {
+    width: 90%;
+    padding: 1%;
+  }
+  .parent1 > nav {
+    width: 100%;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .parent1 > nav > ul {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .parent1 > nav > ul > li {
+    list-style: none;
+  }
+  .parent2 {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .parent2 > h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin: 3%;
+  }
+  .parent2 > .child {
+    max-width: 1000px;
+    min-width: 400px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .parent2 > .child > .child1 {
+    flex: 0 0;
+    border: 1px solid white;
+    min-width: 300px;
+    max-width: 400px;
+    margin: 2%;
+    padding: 1%;
+  }
+  .parent2 > .child > .child2 {
+    border: 1px solid white;
+    flex: 0 0;
+    min-width: 400px;
+    max-width: 500px;
+    margin: 2%;
+    padding: 1%;
+  }
+  
+  .image {
+    width: 50%;
+    height: auto;
+  }
+
+  .image2 {
+    width: 50%;
+    height: auto;
+  }
+
+  .navbaricon {
+    width: 20%;
+    height: auto;
+  }
+
+  @media screen and (min-width: 480px) {
+    .image {
+      display: flex;
+      width: 80%;
+    }
+    .image2 {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .image {
+      display: none;
+    }
+    
+    .image2 {
+      display: flex;
+      width: 80%;
+    } 
+  }
